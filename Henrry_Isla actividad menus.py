@@ -5,7 +5,8 @@ while repeticion:
     print("\n--- MENÚ ---")
     print("1. Pago tarjeta de crédito")
     print("2. Simulación de compras")
-    print("3. Salir")
+    print("3. Consultar deuda actual")
+    print("4. Salir")
     
     try:
         opcion = int(input("Ingrese una opción: "))
@@ -28,20 +29,22 @@ while repeticion:
                 total_compras = 0 
                 
                 for i in range(cant_compra):
-                   
                     valor = float(input(f"Ingresa el valor de la compra nro {i + 1}: "))
                     total_compras += valor 
-                 
+                
                 deuda_simulada = deuda + total_compras
                 print(f"Simulación registrada. La deuda si las compras se realizan sería de: ${deuda_simulada}")
                 
-                
         elif opcion == 3:
+            # Nueva opción añadida
+            print(f"Tu deuda actual confirmada es de: ${deuda}")
+            
+        elif opcion == 4:
             print("Saliendo del sistema...")
             repeticion = False 
             
         else:
-            print("Opción inválida. Por favor ingresa 1, 2 o 3.")
+            print("Opción inválida. Por favor ingresa 1, 2, 3 o 4.")
             
     except ValueError:
         print("Error. Ingresa un valor numérico válido.")
